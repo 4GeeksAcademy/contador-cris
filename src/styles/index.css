@@ -9,3 +9,29 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+body{
+    display: flex;
+    position: absolute;
+    top: 300px;
+    left: 25vw;
+    background-color: #303030;
+}
+
+.Timers{
+    background-color: white;
+    padding: 4px;
+    width: 200px;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 40vw;
+}

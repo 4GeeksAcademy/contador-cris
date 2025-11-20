@@ -1,8 +1,6 @@
 import React from "react";
-import Timers from "./timer";
-
-let timer = 0;
-let id = 0
+import Timers from "./timer"
+import Simbolo from "./simbolo";
 
 const Home = ({timer}) => {
 
@@ -18,11 +16,12 @@ const Home = ({timer}) => {
 		<div className="container mt-4">
 			<div className="row">
 				<div className="col d-flex gap-3 p-1 aling-items-center text-center">
-					<Timers id={id + 4} value={contadores.cont5} />
-					<Timers id={id + 3} value={contadores.cont4} />
-					<Timers id={id + 2} value={contadores.cont3} />
-					<Timers id={id + 1} value={contadores.cont2} />
-                    <Timers id={id} value={contadores.cont1} />
+					<Simbolo />
+					<Timers value={contadores.cont5} />
+					<Timers value={contadores.cont4} />
+					<Timers value={contadores.cont3} />
+					<Timers value={contadores.cont2} />
+                    <Timers value={contadores.cont1} />
 				</div>
 			</div>
 		</div>
