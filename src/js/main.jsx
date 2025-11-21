@@ -20,6 +20,7 @@ let timerCount = null;
 
 const startTimer = () => {
   timerCount = setInterval(() => {
+    if(timer == 0) timer = 1;
 
     if (timer % 10 === 0 && timer !== 0) {
       alert(`¡El contador llegó a ${timer}!`);
@@ -29,6 +30,7 @@ const startTimer = () => {
         <Home timer={timer++} />
       </React.StrictMode>
     );
+    console.log(timer);
   }, 1000);
 };
 
