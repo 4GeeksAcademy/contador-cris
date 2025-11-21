@@ -20,6 +20,10 @@ let timerCount = null;
 
 const startTimer = () => {
   timerCount = setInterval(() => {
+
+    if (timer % 10 === 0 && timer !== 0) {
+      alert(`¡El contador llegó a ${timer}!`);
+    }
     root.render(
       <React.StrictMode>
         <Home timer={timer++} />
@@ -34,20 +38,46 @@ const stopTimer = () => {
   console.log("Se detiene");
 };
 
+const countdownTimer = () => {
+  clearInterval(timerCount);
+  timerCount = null;
+  timerCount = setInterval(() => {
+
+    if (timer <= 0) {
+      clearInterval(timerCount);
+      timerCount = null;
+      timer = 0;
+      root.render(
+        <React.StrictMode>
+          <Home timer={0} />
+        </React.StrictMode>
+      );
+      console.log("Cuenta regresiva terminada");
+      return;
+    }
+    timer--;
+
+    root.render(
+      <React.StrictMode>
+        <Home timer={timer} />
+      </React.StrictMode>
+    );
+
+  }, 1000);
+};
+
 const resetTimer = () => {
   timer = 0;
-
   root.render(
     <React.StrictMode>
       <Home timer={0} />
     </React.StrictMode>
   );
-
   console.log("Se reinicia");
 };
 
 startTimer();
 
-export { stopTimer, startTimer, resetTimer };
+export { stopTimer, startTimer, resetTimer, countdownTimer };
 
 

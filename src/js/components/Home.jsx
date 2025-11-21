@@ -4,8 +4,9 @@ import Simbolo from "./simbolo";
 import Stop from "./buttonStop";
 import Continue from "./buttonContinue";
 import Reset from "./resetTimer";
+import Countdown from "./countDownButton";
 
-const Home = ({ timer, onStop }) => {
+const Home = ({ timer }) => {
 
 	const contadores = {
 		cont1: timer % 10,
@@ -32,6 +33,7 @@ const Home = ({ timer, onStop }) => {
 					<Stop />
 					<Continue />
 					<Reset />
+					<Countdown />
 				</div>
 
 			</div>
